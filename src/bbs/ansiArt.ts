@@ -1,0 +1,88 @@
+import type { VaultFile } from './types';
+
+export const NECRO_BANNER_ANSI = [
+  '╔══════════════════════════════════════════════════════════════════════════╗',
+  '║  ███╗   ██╗███████╗ ██████╗██████╗  ██████╗       ██████╗ ██████╗ ███████╗║',
+  '║  ████╗  ██║██╔════╝██╔════╝██╔══██╗██╔═══██╗      ██╔══██╗██╔══██╗██╔════╝║',
+  '║  ██╔██╗ ██║█████╗  ██║     ██████╔╝██║   ██║█████╗██████╔╝██████╔╝███████╗║',
+  '║  ██║╚██╗██║██╔══╝  ██║     ██╔══██╗██║   ██║╚════╝██╔══██╗██╔══██╗╚════██║║',
+  '║  ██║ ╚████║███████╗╚██████╗██║  ██║╚██████╔╝      ██████╔╝██████╔╝███████║║',
+  '║  ╚═╝  ╚═══╝╚══════╝ ╚═════╝╚═╝  ╚═╝ ╚═════╝       ╚═════╝ ╚═════╝ ╚══════╝║',
+  '╠══════════════════════════════════════════════════════════════════════════╣',
+  '║  NODE 1:1989/1031 · SYSOP: PHANTOM_CARRIER · 2400-BAUD RESURRECTED 2026  ║',
+  '╚══════════════════════════════════════════════════════════════════════════╝',
+].join('\n');
+
+export const HAUNTED_SKULL_ART = [
+  '        .-""""-.        ',
+  '       /        \\       ',
+  '      |  O    O  |      ',
+  '      |    /\\    |      ',
+  '       \\  ====  /       ',
+  '        `-|  |-`        ',
+  '      [CARRIER LOST]    ',
+].join('\n');
+
+export const VAULT_FILES: readonly VaultFile[] = [
+  {
+    id: 'necro-nfo',
+    filename: 'NECRO89.NFO',
+    category: 'SYSOP NFO',
+    year: '1989',
+    description: 'Original SysOp underground node manifest & acoustic modem dial rules',
+    content: [
+      '======================================================================',
+      '               NECRO-BBS 1989 :: NODE 1:1989/1031.0',
+      '        "Where Dead Protocols Wake Up at 2400 Bits Per Second"',
+      '======================================================================',
+      '',
+      'HARDWARE  : 80386DX-25MHz / 4MB RAM / USRobotics Courier HST 2400',
+      'HOURS     : MIDNIGHT - 05:00 LOCAL (PHONE LINE SHARED WITH PARENTS)',
+      'PROTOCOLS : XMODEM-CRC, YMODEM-G, ZMODEM-8K (AUTO-RESUME ENABLED)',
+      'ECHO NETS : FIDONET ZONE 1 / CRYPT.LORE / 2026.TEMPORAL.BRIDGE',
+      '',
+      'RULES OF THE CRYPT:',
+      '  1. NO LEECHING! Maintain a 1:3 upload/download byte ratio.',
+      '  2. Respect the 60-minute daily Door Game time bank.',
+      '  3. If the carrier drops during a thunderstorm, redial ATDT 555-1989.',
+      '======================================================================',
+    ].join('\n'),
+  },
+  {
+    id: 'crypt-map',
+    filename: 'CRYPT_89.ANS',
+    category: 'ANSI ART',
+    year: '1989',
+    description: 'Haunted ANSI door-screen art & legend for CRYPT CRAWLER 89',
+    content: [
+      '╔══════════════════════════════════════════════════════════╗',
+      '║          ☠  C R Y P T   C R A W L E R   \' 8 9  ☠         ║',
+      '╠══════════════════════════════════════════════════════════╣',
+      '║   @  = Caller Avatar (You)      *  = Cursed Relic (+250) ║',
+      '║   G  = Dial-Up Ghost (HP 6)     +  = Phosphor Elixir     ║',
+      '║   W  = Baud Wraith   (HP 10)    >  = Crypt Stairs Down   ║',
+      '║   #  = Catacomb Stone Wall      .  = Haunted Floor Tile  ║',
+      '╠══════════════════════════════════════════════════════════╣',
+      '║  CONTROLS: WASD / Arrow Keys / On-Screen D-Pad           ║',
+      '║  SURVIVE 3 FLOORS TO ESCAPE THE LOST CARRIER CATACOMBS!  ║',
+      '╚══════════════════════════════════════════════════════════╝',
+    ].join('\n'),
+  },
+  {
+    id: 'modem-spec',
+    filename: 'V22BIS.DOC',
+    category: 'DOOR DOCS',
+    year: '1988',
+    description: 'Hayes AT command reference & V.22bis 2400-baud handshake notes',
+    content: [
+      'HAYES SMARTMODEM & ITU-T V.22bis QUICK REFERENCE (REV 1988.4)',
+      '------------------------------------------------------------',
+      'ATZ          Reset modem to NVRAM profile 0',
+      'ATM1         Enable acoustic speaker until carrier detect',
+      'ATDT5551989  Touch-tone dial (DTMF dual-frequency matrix)',
+      'ANSWER TONE  2100 Hz CED tone disabling echo suppressors',
+      'V.22bis      1200 Hz (orig) / 2400 Hz (ans) QAM @ 600 baud = 2400 bps',
+      'CONNECT 2400 Carrier Detect (CD) asserted; terminal online.',
+    ].join('\n'),
+  },
+];
