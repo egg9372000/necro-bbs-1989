@@ -1,0 +1,13 @@
+{
+  "name": "NECRO-BBS Typecheck & Vitest Guard",
+  "version": "1.0.0",
+  "description": "Automatically validates TypeScript strict types and runs Vitest BBS engine tests whenever source or test files change.",
+  "when": {
+    "type": "fileEdited",
+    "patterns": ["src/**/*.ts", "src/**/*.tsx", "tests/**/*.ts"]
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "npm run typecheck && npm test"
+  }
+}
