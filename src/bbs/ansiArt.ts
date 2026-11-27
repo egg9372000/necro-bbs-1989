@@ -56,7 +56,7 @@ export const VAULT_FILES: readonly VaultFile[] = [
     description: 'Haunted ANSI door-screen art & legend for CRYPT CRAWLER 89',
     content: [
       '╔══════════════════════════════════════════════════════════╗',
-      '║          ☠  C R Y P T   C R A W L E R   \' 8 9  ☠         ║',
+      '║         *  C R Y P T   C R A W L E R   \' 8 9  *          ║',
       '╠══════════════════════════════════════════════════════════╣',
       '║   @  = Caller Avatar (You)      *  = Cursed Relic (+250) ║',
       '║   G  = Dial-Up Ghost (HP 6)     +  = Phosphor Elixir     ║',
