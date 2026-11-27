@@ -442,6 +442,13 @@ button {
   white-space: pre-wrap;
 }
 
+/* Keyboard focus — matches active CRT phosphor theme */
+:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 2px;
+  box-shadow: 0 0 8px var(--glow);
+}
+
 @media (max-width: 880px) {
   .bbs-grid {
     grid-template-columns: 1fr;
