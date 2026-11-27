@@ -7,6 +7,16 @@ import {
   SEEDED_MESSAGES,
 } from '../src/bbs/bbsStore';
 import { VAULT_FILES } from '../src/bbs/ansiArt';
+
+/** Returns the display width of a string, counting wide Unicode characters (e.g. emoji) as 2. */
+function displayWidth(str: string): number {
+  let w = 0;
+  for (const ch of str) {
+    const cp = ch.codePointAt(0) ?? 0;
+    w += cp === 0x2620 || cp >= 0x1f000 ? 2 : 1;
+  }
+  return w;
+}
 import {
   createCryptFloor,
   MAX_CRYPT_FLOORS,
@@ -77,5 +87,17 @@ describe('NECRO-BBS 1989 — Resurrection Engine & Door Game Tests', () => {
     expect(snap.version).toBe('necro-bbs-1989/v1');
     expect(snap.messages.length).toBe(SEEDED_MESSAGES.length);
     expect(snap.hallOfFame[0].score).toBe(4200);
+  });
+
+  it('CRYPT_89.ANS — all box lines have identical display width', () => {
+    const cryptFile = VAULT_FILES.find((f) => f.filename === 'CRYPT_89.ANS');
+    expect(cryptFile).toBeDefined();
+    const lines = cryptFile!.content.split('\n');
+    const widths = lines.map(displayWidth);
+    const expected = widths[0];
+    expect(expected).toBeGreaterThan(0);
+    for (let i = 0; i < lines.length; i++) {
+      expect(widths[i], `Line ${i} has display width ${widths[i]}, expected ${expected}: |${lines[i]}|`).toBe(expected);
+    }
   });
 });
